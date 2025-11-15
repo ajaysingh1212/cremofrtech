@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'site_title' => 'RTECH CRM',
+    'site_title' => 'RTECHdscs CRM',
 
 ];
