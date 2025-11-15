@@ -50,7 +50,7 @@
     <div class="MDJAminDiv">
       <a
         class="MDJAmin"
-        href="https://github.com/MDJAmin"
+        href="https://github.com/ajaysingh1212"
         target="_blank"
         >Rock On Devil</a
       >
