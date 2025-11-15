@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Http\Requests;
+
+use App\Models\OtherEmployee;
+use Gate;
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Response;
+
+class UpdateOtherEmployeeRequest extends FormRequest
+{
+    public function authorize()
+    {
+        return Gate::allows('other_employee_edit');
+    }
+
+    public function rules()
+    {
+        return [
+            'name' => [
+                'string',
+                'required',
+            ],
+            'phone_number' => [
+                'string',
+                'required',
+                'unique:other_employees,phone_number,' . request()->route('other_employee')->id,
+            ],
+            'date_of_joining' => [
+                'required',
+                'date_format:' . config('panel.date_format'),
+            ],
+            'salary' => [
+                'string',
+                'nullable',
+            ],
+            'parmanent_address' => [
+                'string',
+                'nullable',
+            ],
+            'aadhar' => [
+                'string',
+                'nullable',
+            ],
+        ];
+    }
+}
